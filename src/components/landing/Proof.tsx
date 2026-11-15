@@ -1,4 +1,5 @@
 import { Accent, Eyebrow } from "./bits";
+import { Doodles } from "./decor";
 import { CountUp, Reveal, RevealItem } from "./motion";
 
 const STATS = [
@@ -9,7 +10,8 @@ const STATS = [
 
 export function Proof() {
   return (
-    <section id="proof" aria-labelledby="proof-title" className="section-pad relative">
+    <section id="proof" aria-labelledby="proof-title" className="section-pad relative isolate">
+      <Doodles layout="proof" />
       <Reveal className="container-page">
         <RevealItem className="max-w-[40rem]">
           <Eyebrow>The problem</Eyebrow>
@@ -20,7 +22,7 @@ export function Proof() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {STATS.map((s) => (
             <RevealItem key={s.suffix + s.to} className="card-surface lift p-8">
-              <p className="font-display text-display text-indigo">
+              <p className="font-display text-display text-forest">
                 <CountUp to={s.to} suffix={s.suffix} />
               </p>
               <p className="mt-4 text-lead text-muted-ink">{s.text}</p>

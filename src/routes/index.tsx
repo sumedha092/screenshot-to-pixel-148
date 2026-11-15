@@ -37,11 +37,12 @@ function Index() {
       <div className="relative min-h-screen bg-background text-foreground">
         {/* faint 12-column grid lines behind light sections */}
         <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+          <div className="paw-trail absolute inset-0" />
           <div className="container-page grid-lines h-full" />
         </div>
         <a
           href="#main"
-          className="sr-only z-[60] rounded-full bg-navy px-4 py-2 text-on-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-[60] rounded-full bg-bark px-4 py-2 text-on-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Skip to content
         </a>
