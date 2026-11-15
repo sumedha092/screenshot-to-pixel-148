@@ -44,20 +44,20 @@ export function HowItWorks() {
           {/* connecting line (desktop: horizontal, mobile: vertical) */}
           <div aria-hidden="true" className="absolute left-[16.66%] right-[16.66%] top-9 hidden h-0.5 bg-line md:block">
             <motion.div
-              className="h-full origin-left bg-clay"
+              className="h-full origin-left bg-indigo"
               style={{ scaleX: reduce ? 1 : progress }}
             />
           </div>
           <div aria-hidden="true" className="absolute bottom-10 left-9 top-9 w-0.5 bg-line md:hidden">
-            <motion.div className="h-full w-full origin-top bg-clay" style={{ scaleY: reduce ? 1 : progress }} />
+            <motion.div className="h-full w-full origin-top bg-indigo" style={{ scaleY: reduce ? 1 : progress }} />
           </div>
 
           <Reveal as="ol" className="relative grid gap-10 md:grid-cols-3 md:gap-8">
             {STEPS.map((s, i) => (
               <RevealItem as="li" key={s.title} className="flex gap-5 md:flex-col md:items-center md:text-center">
-                <div className="relative grid size-[72px] shrink-0 place-items-center rounded-full border border-line bg-cream shadow-card">
-                  <s.icon className="size-7 text-clay-dark" aria-hidden="true" />
-                  <span className="absolute -right-1 -top-1 grid size-7 place-items-center rounded-full bg-ink text-body font-extrabold text-cream tabular-nums">
+                <div className="relative grid size-[72px] shrink-0 place-items-center rounded-full border border-line bg-indigo-tint shadow-card">
+                  <s.icon className="size-7 text-indigo" aria-hidden="true" />
+                  <span className="absolute -right-1 -top-1 grid size-7 place-items-center rounded-full bg-navy text-body font-extrabold text-on-dark tabular-nums">
                     {i + 1}
                   </span>
                 </div>

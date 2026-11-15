@@ -19,10 +19,10 @@ function LabeledCard({ label }: { label: string }) {
         <img
           src={IMAGES.labelProof}
           alt="The same black-and-white shelter dog, smiling on a walk"
-          className="photo-warm aspect-[4/5] w-full object-cover"
+          className="photo-grade aspect-[4/5] w-full object-cover"
           loading="lazy"
         />
-        <span className="absolute left-3 top-3 hidden rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink md:inline-block">
+        <span className="absolute left-3 top-3 hidden rounded-full bg-surface/90 px-3 py-1 text-body font-bold text-navy md:inline-block">
           Labeled: {label}
         </span>
       </div>
@@ -55,21 +55,21 @@ export function LabelProof() {
 
           <RevealItem className="relative order-3 col-span-2 md:order-none md:col-span-6">
             <div className="flex justify-center py-1 md:hidden" aria-hidden="true">
-              <ArrowDown className="size-6 text-clay" />
+              <ArrowDown className="size-6 text-indigo" />
             </div>
             <div className="card-surface relative mx-auto max-w-[420px] p-7 md:p-8">
               <span aria-hidden="true" className="absolute left-0 top-1/2 hidden -translate-x-full -translate-y-1/2 md:block">
-                <ArrowRight className="size-6 text-clay" />
+                <ArrowRight className="size-6 text-indigo" />
               </span>
               <span aria-hidden="true" className="absolute right-0 top-1/2 hidden -translate-y-1/2 translate-x-full rotate-180 md:block">
-                <ArrowRight className="size-6 text-clay" />
+                <ArrowRight className="size-6 text-indigo" />
               </span>
               <motion.div
                 initial={{ scale: reduce ? 1 : 0.6, opacity: reduce ? 1 : 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.5, ease: EASE_UI, delay: 0.2 }}
-                className="mx-auto grid size-14 place-items-center rounded-full bg-sage text-cream shadow-card"
+                className="mx-auto grid size-14 place-items-center rounded-full bg-mint text-night shadow-card"
               >
                 <Check className="size-7" strokeWidth={3} aria-hidden="true" />
               </motion.div>

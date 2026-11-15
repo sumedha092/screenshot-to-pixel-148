@@ -9,12 +9,12 @@ export function ClosingCta() {
       <GlowBlobs />
       <Reveal className="container-page relative text-center">
         <RevealItem>
-          <h2 id="cta-title" className="mx-auto max-w-[48rem] text-display text-cream">
-            Every dog deserves to be seen <Accent tone="peach">for who they are.</Accent>
+          <h2 id="cta-title" className="mx-auto max-w-[48rem] text-display text-on-dark">
+            Every dog deserves to be seen <Accent tone="sky">for who they are.</Accent>
           </h2>
         </RevealItem>
         <RevealItem className="mt-10">
-          <Button asChild variant="clay" size="pill">
+          <Button asChild variant="brand" size="pill">
             <a href={APP_URL}>Open the app</a>
           </Button>
         </RevealItem>

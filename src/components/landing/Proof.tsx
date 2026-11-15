@@ -20,7 +20,7 @@ export function Proof() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {STATS.map((s) => (
             <RevealItem key={s.suffix + s.to} className="card-surface lift p-8">
-              <p className="font-display text-display text-clay-dark">
+              <p className="font-display text-display text-indigo">
                 <CountUp to={s.to} suffix={s.suffix} />
               </p>
               <p className="mt-4 text-lead text-muted-ink">{s.text}</p>
