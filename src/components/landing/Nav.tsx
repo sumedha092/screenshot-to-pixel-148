@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { APP_URL } from "./images";
-import { PawMark } from "./bits";
+import { SearchDogLogo } from "./SearchDogLogo";
 
 const LINKS = [
   { href: "#how-it-works", label: "How it works" },
@@ -13,8 +13,8 @@ export function Nav() {
     <header className="glass-nav sticky top-0 z-50">
       <nav aria-label="Main" className="container-page flex h-[72px] items-center justify-between gap-6">
         <a href="#top" className="flex items-center gap-2 rounded-full text-ink">
-          <span className="grid size-9 place-items-center rounded-full bg-logo text-on-dark">
-            <PawMark className="size-5" />
+          <span className="grid size-9 place-items-center text-forest">
+            <SearchDogLogo />
           </span>
           <span className="font-display text-h3 font-semibold tracking-tight">Bonafide</span>
         </a>

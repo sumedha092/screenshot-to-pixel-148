@@ -36,4 +36,5 @@ use the editor.
 - Photo URLs and the "Open the app" target are centralized in `src/components/landing/images.ts`; the app URL comes from `VITE_APP_URL` with a localhost fallback — one place to swap them.
 - Decorative background art (doodles, hills, bouncing ball, faded photos) lives in `src/components/landing/decor.tsx`, rendered aria-hidden at `-z-10` inside `isolate` sections — keeps art behind content and out of screen readers.
 - `cn()` in `src/lib/utils.ts` registers the custom type scale (display/h2/h3/lead/body) with tailwind-merge — otherwise `text-body` silently strips text colors.
+- Brand logos use the currentColor SVG in `SearchDogLogo.tsx` with matching geometry in `public/favicon.svg`; decorative paw prints remain separate — keeps the identity scalable on light and reversed surfaces without changing background art.
 <!-- AGENT-MEMORY:END -->
