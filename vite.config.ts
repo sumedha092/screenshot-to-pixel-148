@@ -15,4 +15,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle framer-motion with React up front; discovering it mid-session re-optimizes deps
+    // and can load two React copies ("Cannot read properties of null (reading 'useContext')").
+    optimizeDeps: { include: ["framer-motion"] },
+  },
 });

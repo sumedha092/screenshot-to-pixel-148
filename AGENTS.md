@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+<!-- AGENT-MEMORY:BEGIN -->
+- Landing page sections live in `src/components/landing/` and are composed in `src/routes/index.tsx` — keeps the single scroll page modular.
+- Animations use framer-motion inside `<MotionConfig reducedMotion="user">`; infinite/decorative loops also check `useReducedMotion` — reduced-motion users must get a static page.
+- All colors/sizes come from tokens and `@utility` classes in `src/styles.css` (chip, card-surface, lift, section-dark, eyebrow) — no ad-hoc colors in components.
+- Photo URLs and the "Open the app" target are centralized in `src/components/landing/images.ts` — one place to swap them.
+<!-- AGENT-MEMORY:END -->

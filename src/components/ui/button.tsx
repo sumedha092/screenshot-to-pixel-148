@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -16,12 +16,19 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        clay: "bg-clay text-ink font-bold shadow-card transition-[background-color,color,transform] duration-200 ease-ui hover:bg-clay-dark hover:text-cream active:translate-y-px",
+        outlineDark:
+          "border border-cream/40 text-cream font-bold transition-colors duration-200 ease-ui hover:border-cream hover:bg-cream/10",
+        outlineInk:
+          "border border-line bg-surface text-ink font-bold transition-colors duration-200 ease-ui hover:border-clay-dark hover:text-clay-dark",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        pill: "h-12 rounded-full px-6 text-body",
+        pillSm: "h-10 rounded-full px-5 text-body",
       },
     },
     defaultVariants: {
