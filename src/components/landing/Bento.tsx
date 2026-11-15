@@ -37,9 +37,8 @@ function SettlingChart() {
   const reduce = useReducedMotion();
   const w = 240;
   const h = 110;
-  const pts = STRESS.map((v, i) => [12 + (i * (w - 24)) / 4, 10 + ((100 - v) / 100) * 0 + (v / 100) * (h - 30)] as const);
-  // invert so high stress is high on chart
-  const pp = pts.map(([x, y]) => [x, h - 20 - (y - 10)] as const);
+  // high stress sits high on the chart
+  const pp = STRESS.map((v, i) => [12 + (i * (w - 24)) / 4, 10 + ((100 - v) / 100) * (h - 20)] as const);
   const d = pp.map(([x, y], i) => `${i ? "L" : "M"}${x},${y}`).join(" ");
   return (
     <figure>
