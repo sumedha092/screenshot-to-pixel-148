@@ -19,7 +19,7 @@ function Seal() {
     <motion.div
       aria-hidden="true"
       className="relative grid size-24 place-items-center rounded-full bg-clay text-ink shadow-card"
-      animate={reduce ? undefined : { rotate: 360 }}
+      animate={reduce ? {} : { rotate: 360 }}
       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
     >
       <svg viewBox="0 0 100 100" className="absolute inset-0 size-full">

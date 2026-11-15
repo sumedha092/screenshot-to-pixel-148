@@ -19,7 +19,7 @@ export function Hero() {
 
   return (
     <section id="top" className="section-dark relative isolate overflow-hidden">
-      <motion.div aria-hidden="true" style={reduce ? undefined : { y: glowY }} className="pointer-events-none absolute inset-0">
+      <motion.div aria-hidden="true" style={reduce ? {} : { y: glowY }} className="pointer-events-none absolute inset-0">
         <div className="glow-clay absolute -left-40 top-[-10%] size-[620px] opacity-70" />
         <div className="glow-sage absolute right-[-160px] top-[30%] size-[600px] opacity-55" />
       </motion.div>
@@ -72,7 +72,7 @@ function LiveCard() {
 
   return (
     <motion.div
-      animate={reduce ? undefined : { y: [0, -8, 0] }}
+      animate={reduce ? {} : { y: [0, -8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       className="card-surface relative p-3 text-ink"
     >
@@ -89,7 +89,7 @@ function LiveCard() {
           <motion.div
             aria-hidden="true"
             className="absolute left-[30%] top-[12%] h-[62%] w-[42%]"
-            animate={reduce ? undefined : { scale: [1, 1.03, 0.99, 1] }}
+            animate={reduce ? {} : { scale: [1, 1.03, 0.99, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="absolute inset-0 rounded-[14px] border-2 border-peach/90" />
