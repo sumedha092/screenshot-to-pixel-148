@@ -18,7 +18,7 @@ function Seal() {
   return (
     <motion.div
       aria-hidden="true"
-      className="relative grid size-24 place-items-center rounded-full bg-indigo text-on-dark shadow-glow"
+      className="relative grid size-24 place-items-center rounded-full bg-forest text-on-dark shadow-glow"
       animate={reduce ? {} : { rotate: 360 }}
       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
     >
@@ -68,7 +68,7 @@ export function Passport() {
                 <div aria-hidden="true" className="pointer-events-none absolute inset-3 rounded-[20px] border border-line" />
                 <header className="relative flex items-start justify-between gap-4">
                   <div>
-                    <p className="eyebrow text-indigo">Behavior Passport</p>
+                    <p className="eyebrow text-forest">Behavior Passport</p>
                     <p className="mt-1 text-body text-muted-ink tabular-nums">No. BF-2026-0418 · Issued Nov 2026</p>
                   </div>
                   <Seal />
@@ -99,7 +99,7 @@ export function Passport() {
                       ))}
                       <div className="flex items-baseline justify-between border-b border-dashed border-line pb-1">
                         <dt className="font-semibold">Breed</dt>
-                        <dd className="font-bold text-indigo">not used</dd>
+                        <dd className="font-bold text-forest">not used</dd>
                       </div>
                     </dl>
                 </div>
@@ -117,11 +117,11 @@ export function Passport() {
 
                 <footer className="relative mt-7 flex flex-wrap items-end justify-between gap-4 border-t border-line pt-5 text-body text-muted-ink">
                   <div>
-                    <p className="font-display text-h3 italic text-navy">R. Alvarez</p>
+                    <p className="font-display text-h3 italic text-ink">R. Alvarez</p>
                     <p>Shelter behavior lead</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-display text-h3 italic text-navy">Dr. K. Osei</p>
+                    <p className="font-display text-h3 italic text-ink">Dr. K. Osei</p>
                     <p>Shelter veterinarian</p>
                   </div>
                 </footer>

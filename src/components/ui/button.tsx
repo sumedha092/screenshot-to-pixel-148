@@ -16,11 +16,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        brand: "bg-indigo text-on-dark font-bold shadow-glow transition-[background-color,transform] duration-200 ease-ui hover:bg-indigo-dark active:translate-y-px",
+        brand: "bg-forest text-on-dark font-bold shadow-glow transition-[background-color,transform] duration-200 ease-ui hover:bg-forest-dark active:translate-y-px",
         outlineDark:
           "border border-on-dark/20 text-on-dark font-bold transition-colors duration-200 ease-ui hover:border-on-dark/60 hover:bg-on-dark/10",
         outlineInk:
-          "border border-line bg-surface text-navy font-bold transition-colors duration-200 ease-ui hover:border-indigo hover:text-indigo",
+          "border border-line bg-surface text-ink font-bold transition-colors duration-200 ease-ui hover:border-forest hover:text-forest",
       },
       size: {
         default: "h-9 px-4 py-2",
