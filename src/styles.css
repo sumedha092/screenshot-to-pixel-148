@@ -295,3 +295,33 @@
     animation: none;
   }
 }
+
+/* Bento hover-to-reveal detail; always visible on touch devices */
+@utility bento-detail {
+  transition:
+    opacity 200ms var(--ease-ui),
+    transform 200ms var(--ease-ui);
+  @media (hover: hover) {
+    opacity: 0;
+    transform: translateY(8px);
+    :where(.group):hover &,
+    :where(.group):focus-within & {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-3px, 2px) rotate(-0.6deg); }
+  40% { transform: translate(3px, -2px) rotate(0.5deg); }
+  60% { transform: translate(-2px, -3px) rotate(-0.4deg); }
+  80% { transform: translate(2px, 3px) rotate(0.6deg); }
+}
+@utility shaky {
+  animation: shake 0.9s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
