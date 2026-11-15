@@ -34,4 +34,5 @@ use the editor.
 - Animations use framer-motion inside `<MotionConfig reducedMotion="user">`; infinite/decorative loops also check `useReducedMotion` — reduced-motion users must get a static page.
 - All colors/sizes come from tokens and `@utility` classes in `src/styles.css` (chip, card-surface, lift, section-dark, eyebrow) — no ad-hoc colors in components.
 - Photo URLs and the "Open the app" target are centralized in `src/components/landing/images.ts` — one place to swap them.
+- `cn()` in `src/lib/utils.ts` registers the custom type scale (display/h2/h3/lead/body) with tailwind-merge — otherwise `text-body` silently strips text colors.
 <!-- AGENT-MEMORY:END -->

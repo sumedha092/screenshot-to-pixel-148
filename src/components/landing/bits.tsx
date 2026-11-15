@@ -14,10 +14,10 @@ export function PawMark({ className }: { className?: string }) {
 }
 
 /** The single italic accent phrase inside a heading. */
-export function Accent({ children, tone = "clay" }: { children: ReactNode; tone?: "clay" | "peach" }) {
-  return (
-    <em className={cn("italic", tone === "clay" ? "text-clay-dark" : "text-peach")}>{children}</em>
-  );
+const accentClass = { indigo: "text-indigo", sky: "text-sky", gradient: "text-gradient" } as const;
+
+export function Accent({ children, tone = "indigo" }: { children: ReactNode; tone?: keyof typeof accentClass }) {
+  return <em className={cn("italic", accentClass[tone])}>{children}</em>;
 }
 
 export type Level = "green" | "yellow" | "orange" | "red";
@@ -44,15 +44,16 @@ export function LevelChip({ level, children }: { level: Level; children: ReactNo
   );
 }
 
-export function Eyebrow({ children, tone = "clay" }: { children: ReactNode; tone?: "clay" | "peach" }) {
-  return <p className={cn("eyebrow", tone === "clay" ? "text-clay-dark" : "text-peach")}>{children}</p>;
+export function Eyebrow({ children, tone = "indigo" }: { children: ReactNode; tone?: "indigo" | "sky" }) {
+  return <p className={cn("eyebrow", tone === "indigo" ? "text-indigo" : "text-sky")}>{children}</p>;
 }
 
 export function GlowBlobs({ className }: { className?: string }) {
   return (
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
-      <div className="glow-clay absolute -left-32 -top-24 size-[520px] opacity-60" />
-      <div className="glow-sage absolute -bottom-40 right-[-120px] size-[560px] opacity-50" />
+      <div className="glow-indigo absolute -left-32 -top-24 size-[520px] opacity-45" />
+      <div className="glow-sky absolute -bottom-40 right-[-120px] size-[560px] opacity-35" />
+      <div className="glow-mint absolute bottom-[-30%] left-[35%] size-[420px] opacity-20" />
     </div>
   );
 }

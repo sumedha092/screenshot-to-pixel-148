@@ -49,7 +49,7 @@ function SettlingChart() {
         <motion.path
           d={d}
           fill="none"
-          className="stroke-sage"
+          className="stroke-indigo"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -59,7 +59,7 @@ function SettlingChart() {
           transition={{ duration: 1.4, ease: EASE_UI }}
         />
         {pp.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="4" className="fill-cream stroke-sage" strokeWidth="2.5" />
+          <circle key={i} cx={x} cy={y} r="4" className="fill-mint stroke-surface" strokeWidth="2.5" />
         ))}
       </svg>
       <figcaption className="mt-2 flex justify-between text-body font-semibold text-muted-ink tabular-nums">
@@ -115,7 +115,7 @@ function MatchViz() {
             key={i}
             d={`M20,${y(d)} C80,${y(d)} 80,${y(f)} 140,${y(f)}`}
             fill="none"
-            className="stroke-clay"
+            className="stroke-sky"
             strokeWidth="0.9"
             strokeLinecap="round"
             initial={{ pathLength: reduce ? 1 : 0 }}
@@ -134,7 +134,7 @@ function MatchViz() {
           <img
             src={dog.img}
             alt={dog.alt}
-            className="photo-warm size-11 rounded-full border-2 border-cream object-cover shadow-card md:size-14"
+            className="photo-grade size-11 rounded-full border-2 border-surface object-cover shadow-card md:size-14"
             loading="lazy"
           />
           <span className="absolute top-full mt-1 whitespace-nowrap text-body font-bold">{dog.name}</span>
@@ -146,7 +146,7 @@ function MatchViz() {
           className="absolute left-[93.75%] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
           style={{ top: `${rowY(i)}%` }}
         >
-          <span className="grid size-11 place-items-center rounded-full border border-line bg-sand text-clay-dark shadow-card md:size-14">
+          <span className="grid size-11 place-items-center rounded-full border border-line bg-indigo-tint text-indigo shadow-card md:size-14">
             <fam.icon className="size-5" aria-hidden="true" />
           </span>
           <span className="absolute right-0 top-full mt-1 whitespace-nowrap text-body font-bold sm:right-auto">
@@ -158,7 +158,7 @@ function MatchViz() {
         <motion.span
           key={pct}
           aria-hidden="true"
-          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink px-2.5 py-0.5 text-body font-extrabold text-cream tabular-nums"
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-navy px-2.5 py-0.5 text-body font-extrabold text-on-dark tabular-nums"
           style={{ top: `${(rowY(d) + rowY(f)) / 2}%` }}
           initial={{ opacity: reduce ? 1 : 0 }}
           whileInView={{ opacity: 1 }}
@@ -234,12 +234,12 @@ export function Bento() {
             title="Camera-shake proof"
             detail="Works on volunteers' handheld phone video — we stabilize before we measure."
           >
-            <div className="relative overflow-hidden rounded-[20px] bg-sand">
+            <div className="relative overflow-hidden rounded-[20px] bg-line">
               <div className="shaky">
-                <img src={IMAGES.shake} alt="Two small mixed-breed dogs trotting down a dirt path" className="photo-warm aspect-[4/3] w-full scale-110 object-cover" loading="lazy" />
+                <img src={IMAGES.shake} alt="Two small mixed-breed dogs trotting down a dirt path" className="photo-grade aspect-[4/3] w-full scale-110 object-cover" loading="lazy" />
               </div>
-              <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink">
-                <Check className="size-4 text-sage" aria-hidden="true" /> Stabilized
+              <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-surface/90 px-3 py-1 text-body font-bold text-navy">
+                <Check className="size-4 text-mint" aria-hidden="true" /> Stabilized
               </span>
             </div>
           </Tile>
@@ -253,8 +253,8 @@ export function Bento() {
             <ol className="relative space-y-4 border-l-2 border-line pl-5">
               {NOTES.map((n) => (
                 <li key={n.day} className="relative">
-                  <span className="absolute -left-[31px] top-0.5 grid size-5 place-items-center rounded-full bg-cream ring-2 ring-line">
-                    <n.icon className="size-3 text-clay-dark" aria-hidden="true" />
+                  <span className="absolute -left-[31px] top-0.5 grid size-5 place-items-center rounded-full bg-indigo-tint ring-2 ring-line">
+                    <n.icon className="size-3 text-indigo" aria-hidden="true" />
                   </span>
                   <p className="text-body font-bold">
                     {n.day} · {n.who}
@@ -275,13 +275,13 @@ export function Bento() {
             detail="Swap the breed on the kennel card and nothing changes. Breed is never an input."
           >
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-line bg-sand px-3 py-1 text-body font-semibold text-muted-ink line-through">pit bull</span>
-              <span className="rounded-full border border-line bg-sand px-3 py-1 text-body font-semibold text-muted-ink line-through">Lab mix</span>
+              <span className="rounded-full border border-line bg-canvas px-3 py-1 text-body font-semibold text-muted-ink line-through">pit bull</span>
+              <span className="rounded-full border border-line bg-canvas px-3 py-1 text-body font-semibold text-muted-ink line-through">Lab mix</span>
             </div>
             <p className="mt-4 font-display text-h3">
               Same dog. <Accent>Same scores.</Accent>
             </p>
-            <a href="#label-proof" className="mt-4 inline-flex items-center gap-1.5 rounded-md text-body font-bold text-clay-dark hover:underline">
+            <a href="#label-proof" className="mt-4 inline-flex items-center gap-1.5 rounded-md text-body font-bold text-indigo hover:underline">
               See the test <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </Tile>

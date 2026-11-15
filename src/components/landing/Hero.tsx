@@ -20,8 +20,9 @@ export function Hero() {
   return (
     <section id="top" className="section-dark relative isolate overflow-hidden">
       <motion.div aria-hidden="true" style={reduce ? {} : { y: glowY }} className="pointer-events-none absolute inset-0">
-        <div className="glow-clay absolute -left-40 top-[-10%] size-[620px] opacity-70" />
-        <div className="glow-sage absolute right-[-160px] top-[30%] size-[600px] opacity-55" />
+        <div className="glow-indigo absolute -left-40 top-[-10%] size-[620px] opacity-50" />
+        <div className="glow-sky absolute right-[-160px] top-[30%] size-[600px] opacity-35" />
+        <div className="glow-mint absolute bottom-[-25%] left-[30%] size-[480px] opacity-20" />
       </motion.div>
 
       <div className="container-page relative grid items-center gap-14 pb-24 pt-16 md:grid-cols-12 md:gap-8 md:pb-[120px] md:pt-24">
@@ -31,15 +32,15 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE_UI }}
         >
-          <Eyebrow tone="peach">Behavior, measured — never breed</Eyebrow>
-          <h1 className="mt-5 text-display text-cream">
-            Judge the dog, <span className="block"><Accent tone="peach">not the label.</Accent></span>
+          <Eyebrow tone="sky">Behavior, measured — never breed</Eyebrow>
+          <h1 className="mt-5 text-display text-on-dark">
+            Judge the dog, <span className="block"><Accent tone="gradient">not the label.</Accent></span>
           </h1>
-          <p className="mt-6 max-w-[30rem] text-lead text-sand">
+          <p className="mt-6 max-w-[30rem] text-lead text-on-dark/75">
             We measure real behavior from kennel video and match every dog to the family where they'll thrive.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button asChild variant="clay" size="pill">
+            <Button asChild variant="brand" size="pill">
               <a href="#demo">See the demo</a>
             </Button>
             <Button asChild variant="outlineDark" size="pill">
@@ -74,14 +75,14 @@ function LiveCard() {
     <motion.div
       animate={reduce ? {} : { y: [0, -8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="card-surface relative bg-cream p-3 text-ink"
+      className="card-surface relative bg-surface p-3 text-ink"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-line">
         <motion.div className="absolute inset-[-6%]" {...drift}>
           <img
             src={IMAGES.hero}
             alt="A happy brown-and-white shelter dog looking at the camera"
-            className="photo-warm size-full object-cover"
+            className="photo-grade size-full object-cover"
             width={900}
             height={675}
           />
@@ -92,43 +93,43 @@ function LiveCard() {
             animate={reduce ? {} : { scale: [1, 1.03, 0.99, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="absolute inset-0 rounded-[14px] border-2 border-peach/90" />
+            <div className="absolute inset-0 rounded-[14px] border-2 border-sky/80" />
             {["left-0 top-0 border-l-4 border-t-4 rounded-tl-[14px]", "right-0 top-0 border-r-4 border-t-4 rounded-tr-[14px]", "left-0 bottom-0 border-l-4 border-b-4 rounded-bl-[14px]", "right-0 bottom-0 border-r-4 border-b-4 rounded-br-[14px]"].map((c) => (
-              <span key={c} className={`absolute size-5 border-cream ${c}`} />
+              <span key={c} className={`absolute size-5 border-sky ${c}`} />
             ))}
-            <span className="absolute left-2 top-2 rounded-full bg-ink/85 px-2.5 py-0.5 text-body font-bold text-cream tabular-nums">
+            <span className="absolute left-2 top-2 rounded-full bg-sky px-2.5 py-0.5 text-body font-bold text-night tabular-nums">
               dog · 0.97
             </span>
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-ink/80 px-3 py-1 text-body font-extrabold text-cream">
-          <span className="live-dot size-2.5 rounded-full bg-level-red" aria-hidden="true" />
+        <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-night/80 px-3 py-1 text-body font-extrabold text-on-dark">
+          <span className="live-dot size-2.5 rounded-full bg-mint" aria-hidden="true" />
           LIVE
         </div>
-        <div className="absolute bottom-3 right-3 rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink tabular-nums">
+        <div className="absolute bottom-3 right-3 rounded-full bg-surface/90 px-3 py-1 text-body font-bold text-navy tabular-nums">
           Kennel 14 · Day 4
         </div>
       </div>
 
       <div className="px-3 pb-3 pt-5">
         <div className="flex items-baseline justify-between">
-          <p className="font-display text-h3">Live analysis</p>
+          <p className="font-display text-h3 text-navy">Live analysis</p>
           <p className="text-body text-muted-ink tabular-nums">312 min observed</p>
         </div>
         <ul className="mt-4 space-y-3">
           {SCORES.map((s, i) => (
             <li key={s.label} className="grid grid-cols-[9.5rem_1fr_2.5rem] items-center gap-3 text-body">
               <span className="font-semibold">{s.label}</span>
-              <span className="h-2 overflow-hidden rounded-full bg-sand" role="presentation">
+              <span className="h-2 overflow-hidden rounded-full bg-line" role="presentation">
                 <motion.span
-                  className="block h-full rounded-full bg-clay"
+                  className="block h-full rounded-full bg-signature"
                   initial={{ width: 0 }}
                   animate={{ width: `${s.value}%` }}
                   transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 0.6 + i * 0.25, ease: EASE_UI }}
                 />
               </span>
-              <span className="text-right font-bold tabular-nums">
+              <span className="text-right font-bold text-navy tabular-nums">
                 {s.value}
                 <span className="sr-only"> out of 100, {s.note}</span>
               </span>

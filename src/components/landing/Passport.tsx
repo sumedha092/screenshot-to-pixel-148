@@ -18,7 +18,7 @@ function Seal() {
   return (
     <motion.div
       aria-hidden="true"
-      className="relative grid size-24 place-items-center rounded-full bg-clay text-ink shadow-card"
+      className="relative grid size-24 place-items-center rounded-full bg-indigo text-on-dark shadow-glow"
       animate={reduce ? {} : { rotate: 360 }}
       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
     >
@@ -26,8 +26,8 @@ function Seal() {
         <defs>
           <path id="seal-circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
         </defs>
-        <circle cx="50" cy="50" r="46" fill="none" className="stroke-ink/30" strokeWidth="1" strokeDasharray="2 3" />
-        <text className="fill-ink" style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 2.2 }}>
+        <circle cx="50" cy="50" r="46" fill="none" className="stroke-on-dark/40" strokeWidth="1" strokeDasharray="2 3" />
+        <text className="fill-on-dark" style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 2.2 }}>
           <textPath href="#seal-circle">BONAFIDE · BEHAVIOR VERIFIED ·</textPath>
         </text>
       </svg>
@@ -64,10 +64,11 @@ export function Passport() {
                 aria-label="Sample Behavior Passport for Maple"
                 className="paper relative rounded-[28px] border border-line p-6 shadow-lift md:p-9"
               >
+                <div aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-[3px] rounded-b-full bg-signature" />
                 <div aria-hidden="true" className="pointer-events-none absolute inset-3 rounded-[20px] border border-line" />
                 <header className="relative flex items-start justify-between gap-4">
                   <div>
-                    <p className="eyebrow text-clay-dark">Behavior Passport</p>
+                    <p className="eyebrow text-indigo">Behavior Passport</p>
                     <p className="mt-1 text-body text-muted-ink tabular-nums">No. BF-2026-0418 · Issued Nov 2026</p>
                   </div>
                   <Seal />
@@ -77,7 +78,7 @@ export function Passport() {
                   <img
                     src={IMAGES.passport}
                     alt="Maple, a chocolate-brown shelter dog, looking up at the camera"
-                    className="photo-warm aspect-[4/5] w-full rounded-[20px] border-4 border-cream object-cover shadow-card sm:row-span-2"
+                    className="photo-grade aspect-[4/5] w-full rounded-[20px] border-4 border-surface object-cover shadow-card sm:row-span-2"
                     loading="lazy"
                   />
                   <div>
@@ -98,7 +99,7 @@ export function Passport() {
                       ))}
                       <div className="flex items-baseline justify-between border-b border-dashed border-line pb-1">
                         <dt className="font-semibold">Breed</dt>
-                        <dd className="font-bold text-clay-dark">not used</dd>
+                        <dd className="font-bold text-indigo">not used</dd>
                       </div>
                     </dl>
                 </div>
@@ -116,11 +117,11 @@ export function Passport() {
 
                 <footer className="relative mt-7 flex flex-wrap items-end justify-between gap-4 border-t border-line pt-5 text-body text-muted-ink">
                   <div>
-                    <p className="font-display text-h3 italic text-ink">R. Alvarez</p>
+                    <p className="font-display text-h3 italic text-navy">R. Alvarez</p>
                     <p>Shelter behavior lead</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-display text-h3 italic text-ink">Dr. K. Osei</p>
+                    <p className="font-display text-h3 italic text-navy">Dr. K. Osei</p>
                     <p>Shelter veterinarian</p>
                   </div>
                 </footer>
