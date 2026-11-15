@@ -261,6 +261,7 @@
 /* Handling-level chips: soft tint, dark text */
 @utility chip {
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   gap: 0.5rem;
   border-radius: 9999px;
