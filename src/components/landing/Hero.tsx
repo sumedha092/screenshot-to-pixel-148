@@ -1,0 +1,144 @@
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Accent, Eyebrow, LevelChip } from "./bits";
+import { IMAGES } from "./images";
+import { EASE_UI } from "./motion";
+
+const SCORES = [
+  { label: "Energy", value: 62, note: "Moderate" },
+  { label: "Stress", value: 22, note: "Low" },
+  { label: "Approachability", value: 88, note: "High" },
+  { label: "Confidence", value: 74, note: "Steady" },
+  { label: "Arousal spikes", value: 12, note: "Rare" },
+];
+
+export function Hero() {
+  const reduce = useReducedMotion();
+  const { scrollY } = useScroll();
+  const glowY = useTransform(scrollY, [0, 800], [0, 120]); // glow moves 15% of scroll
+
+  return (
+    <section id="top" className="section-dark relative isolate overflow-hidden">
+      <motion.div aria-hidden="true" style={reduce ? undefined : { y: glowY }} className="pointer-events-none absolute inset-0">
+        <div className="glow-clay absolute -left-40 top-[-10%] size-[620px] opacity-70" />
+        <div className="glow-sage absolute right-[-160px] top-[30%] size-[600px] opacity-55" />
+      </motion.div>
+
+      <div className="container-page relative grid items-center gap-14 pb-24 pt-16 md:grid-cols-12 md:gap-8 md:pb-[120px] md:pt-24">
+        <motion.div
+          className="md:col-span-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: EASE_UI }}
+        >
+          <Eyebrow tone="peach">Behavior, measured — never breed</Eyebrow>
+          <h1 className="mt-5 text-display text-cream">
+            Judge the dog, <Accent tone="peach">not the label.</Accent>
+          </h1>
+          <p className="mt-6 max-w-[30rem] text-lead text-sand">
+            We measure real behavior from kennel video and match every dog to the family where they'll thrive.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Button asChild variant="clay" size="pill">
+              <a href="#demo">See the demo</a>
+            </Button>
+            <Button asChild variant="outlineDark" size="pill">
+              <a href="#how-it-works">How it works</a>
+            </Button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: EASE_UI }}
+        >
+          <LiveCard />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function LiveCard() {
+  const reduce = useReducedMotion();
+  const drift = reduce
+    ? {}
+    : {
+        animate: { x: ["0%", "-3%", "2%", "0%"], y: ["0%", "1.5%", "-1%", "0%"] },
+        transition: { duration: 9, repeat: Infinity, ease: "easeInOut" as const },
+      };
+
+  return (
+    <motion.div
+      animate={reduce ? undefined : { y: [0, -8, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="card-surface relative p-3 text-ink"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand">
+        <motion.div className="absolute inset-[-6%]" {...drift}>
+          <img
+            src={IMAGES.hero}
+            alt="A happy brown-and-white shelter dog looking at the camera"
+            className="photo-warm size-full object-cover"
+            width={900}
+            height={675}
+          />
+          {/* tracking box follows the same drift as the dog */}
+          <motion.div
+            aria-hidden="true"
+            className="absolute left-[30%] top-[12%] h-[62%] w-[42%]"
+            animate={reduce ? undefined : { scale: [1, 1.03, 0.99, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="absolute inset-0 rounded-[14px] border-2 border-peach/90" />
+            {["left-0 top-0 border-l-4 border-t-4 rounded-tl-[14px]", "right-0 top-0 border-r-4 border-t-4 rounded-tr-[14px]", "left-0 bottom-0 border-l-4 border-b-4 rounded-bl-[14px]", "right-0 bottom-0 border-r-4 border-b-4 rounded-br-[14px]"].map((c) => (
+              <span key={c} className={`absolute size-5 border-cream ${c}`} />
+            ))}
+            <span className="absolute -top-9 left-0 rounded-full bg-ink/85 px-3 py-1 text-body font-bold text-cream tabular-nums">
+              dog · 0.97
+            </span>
+          </motion.div>
+        </motion.div>
+
+        <div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-ink/80 px-3 py-1 text-body font-extrabold text-cream">
+          <span className="live-dot size-2.5 rounded-full bg-level-red" aria-hidden="true" />
+          LIVE
+        </div>
+        <div className="absolute bottom-3 right-3 rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink tabular-nums">
+          Kennel 14 · Day 4
+        </div>
+      </div>
+
+      <div className="px-3 pb-3 pt-5">
+        <div className="flex items-baseline justify-between">
+          <p className="font-display text-h3">Live analysis</p>
+          <p className="text-body text-muted-ink tabular-nums">312 min observed</p>
+        </div>
+        <ul className="mt-4 space-y-3">
+          {SCORES.map((s, i) => (
+            <li key={s.label} className="grid grid-cols-[9.5rem_1fr_2.5rem] items-center gap-3 text-body">
+              <span className="font-semibold">{s.label}</span>
+              <span className="h-2 overflow-hidden rounded-full bg-sand" role="presentation">
+                <motion.span
+                  className="block h-full rounded-full bg-clay"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${s.value}%` }}
+                  transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 0.6 + i * 0.25, ease: EASE_UI }}
+                />
+              </span>
+              <span className="text-right font-bold tabular-nums">
+                {s.value}
+                <span className="sr-only"> out of 100, {s.note}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-5">
+          <LevelChip level="green">Green — great for first-time owners</LevelChip>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
