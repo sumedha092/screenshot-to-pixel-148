@@ -187,7 +187,7 @@ export function Bento() {
             <h2 id="bento-title" className="mt-4 text-h2">
               Built for real shelters, <Accent>real kennels.</Accent>
             </h2>
-            <p className="mt-4 text-lead text-muted-ink">Hover a tile for the detail.</p>
+            <p className="mt-4 text-lead text-muted-ink [@media(hover:none)]:hidden">Hover a tile for the detail.</p>
           </RevealItem>
         </Reveal>
 

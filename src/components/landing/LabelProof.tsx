@@ -22,10 +22,11 @@ function LabeledCard({ label }: { label: string }) {
           className="photo-warm aspect-[4/5] w-full object-cover"
           loading="lazy"
         />
-        <span className="absolute left-2 top-2 rounded-full bg-cream/90 px-2.5 py-0.5 md:left-3 md:top-3 md:px-3 md:py-1 text-body font-bold text-ink">
+        <span className="absolute left-3 top-3 hidden rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink md:inline-block">
           Labeled: {label}
         </span>
       </div>
+      <p className="px-1 pb-1 pt-3 text-center text-body font-bold md:hidden">Labeled: {label}</p>
     </div>
   );
 }
