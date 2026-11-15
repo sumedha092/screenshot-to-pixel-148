@@ -14,7 +14,7 @@ export function PawMark({ className }: { className?: string }) {
 }
 
 /** The single italic accent phrase inside a heading. */
-const accentClass = { forest: "text-forest", sky: "text-sky", gradient: "text-gradient" } as const;
+const accentClass = { forest: "text-forest", tennis: "text-tennis" } as const;
 
 export function Accent({ children, tone = "forest" }: { children: ReactNode; tone?: keyof typeof accentClass }) {
   return <em className={cn("italic", accentClass[tone])}>{children}</em>;
@@ -44,8 +44,8 @@ export function LevelChip({ level, children }: { level: Level; children: ReactNo
   );
 }
 
-export function Eyebrow({ children, tone = "forest" }: { children: ReactNode; tone?: "forest" | "sky" }) {
-  return <p className={cn("eyebrow", tone === "forest" ? "text-forest" : "text-sky")}>{children}</p>;
+export function Eyebrow({ children, tone = "forest" }: { children: ReactNode; tone?: "forest" | "tennis" }) {
+  return <p className={cn("eyebrow", tone === "forest" ? "text-forest" : "text-tennis")}>{children}</p>;
 }
 
 export function GlowBlobs({ className }: { className?: string }) {
