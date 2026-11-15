@@ -15,4 +15,4 @@ export const IMAGES = {
 };
 
 /** Where every "Open the app" button points. */
-export const APP_URL: string = import.meta.env.VITE_APP_URL ?? "http://localhost:3000/";
+export const APP_URL: string = import.meta.env["VITE_APP_URL"] ?? "http://localhost:3000/";
