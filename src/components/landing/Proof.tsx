@@ -11,6 +11,7 @@ const STATS = [
 export function Proof() {
   return (
     <section id="proof" aria-labelledby="proof-title" className="section-pad relative isolate">
+      <div aria-hidden="true" className="paw-trail pointer-events-none absolute inset-0 -z-10" />
       <Doodles layout="proof" />
       <Reveal className="container-page">
         <RevealItem className="max-w-[40rem]">

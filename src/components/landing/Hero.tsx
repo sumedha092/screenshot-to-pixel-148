@@ -111,7 +111,7 @@ function LiveCard() {
           LIVE
         </div>
         <div className="absolute bottom-3 right-3 rounded-full bg-surface/90 px-3 py-1 text-body font-bold text-ink tabular-nums">
-          Kennel 14 · Day 4
+          Kennel 14 · Session 4
         </div>
       </div>
 
