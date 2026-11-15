@@ -94,7 +94,8 @@ const PAIRS: [number, number, number][] = [
   [1, 2, 91],
   [2, 0, 89],
 ];
-const ROW_Y = [18, 50, 82];
+const ROW_Y = [18, 50, 82] as const;
+const rowY = (i: number) => rowY(i) ?? 50;
 
 function MatchViz() {
   const reduce = useReducedMotion();
@@ -104,7 +105,7 @@ function MatchViz() {
         {PAIRS.map(([d, f], i) => (
           <motion.path
             key={i}
-            d={`M18,${ROW_Y[d]} C50,${ROW_Y[d]} 50,${ROW_Y[f]} 82,${ROW_Y[f]}`}
+            d={`M18,${rowY(d)} C50,${rowY(d)} 50,${rowY(f)} 82,${rowY(f)}`}
             fill="none"
             className="stroke-clay"
             strokeWidth="2"
@@ -118,13 +119,13 @@ function MatchViz() {
         ))}
       </svg>
       {DOGS.map((dog, i) => (
-        <div key={dog.name} className="absolute left-0 flex -translate-y-1/2 items-center gap-2" style={{ top: `${ROW_Y[i]}%` }}>
+        <div key={dog.name} className="absolute left-0 flex -translate-y-1/2 items-center gap-2" style={{ top: `${rowY(i)}%` }}>
           <img src={dog.img} alt={dog.alt} className="photo-warm size-12 rounded-full border-2 border-cream object-cover shadow-card md:size-14" loading="lazy" />
           <span className="hidden text-body font-bold sm:inline">{dog.name}</span>
         </div>
       ))}
       {FAMILIES.map((fam, i) => (
-        <div key={fam.name} className="absolute right-0 flex -translate-y-1/2 flex-row-reverse items-center gap-2" style={{ top: `${ROW_Y[i]}%` }}>
+        <div key={fam.name} className="absolute right-0 flex -translate-y-1/2 flex-row-reverse items-center gap-2" style={{ top: `${rowY(i)}%` }}>
           <span className="grid size-12 place-items-center rounded-full border border-line bg-sand text-clay-dark shadow-card md:size-14">
             <fam.icon className="size-5" aria-hidden="true" />
           </span>
@@ -136,7 +137,7 @@ function MatchViz() {
           key={pct}
           aria-hidden="true"
           className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink px-2.5 py-0.5 text-body font-extrabold text-cream tabular-nums"
-          style={{ top: `${(ROW_Y[d] + ROW_Y[f]) / 2}%` }}
+          style={{ top: `${(rowY(d) + rowY(f)) / 2}%` }}
           initial={{ opacity: reduce ? 1 : 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
