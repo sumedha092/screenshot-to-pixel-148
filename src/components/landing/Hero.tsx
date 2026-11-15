@@ -57,7 +57,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: EASE_UI }}
         >
-          <BouncingBall className="-right-4 -top-14 md:-right-12 md:-top-16" />
+          <BouncingBall className="-right-3 -top-10 md:-right-14 md:top-[38%]" />
           <LiveCard />
         </motion.div>
       </div>
