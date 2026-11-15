@@ -1,4 +1,5 @@
 import { Accent, Eyebrow } from "./bits";
+import { Doodles } from "./decor";
 import { CountUp, Reveal, RevealItem } from "./motion";
 
 const STATS = [
@@ -9,7 +10,8 @@ const STATS = [
 
 export function Proof() {
   return (
-    <section id="proof" aria-labelledby="proof-title" className="section-pad relative">
+    <section id="proof" aria-labelledby="proof-title" className="section-pad relative isolate">
+      <Doodles layout="proof" />
       <Reveal className="container-page">
         <RevealItem className="max-w-[40rem]">
           <Eyebrow>The problem</Eyebrow>

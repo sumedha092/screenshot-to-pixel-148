@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Accent, Eyebrow, LevelChip, PawMark } from "./bits";
+import { Doodles } from "./decor";
 import { IMAGES } from "./images";
 import { Reveal, RevealItem } from "./motion";
 
@@ -38,7 +39,8 @@ function Seal() {
 
 export function Passport() {
   return (
-    <section id="passport" aria-labelledby="passport-title" className="section-pad relative">
+    <section id="passport" aria-labelledby="passport-title" className="section-pad relative isolate">
+      <Doodles layout="passport" />
       <div className="container-page grid items-center gap-14 md:grid-cols-12">
         <Reveal className="md:col-span-5">
           <RevealItem>

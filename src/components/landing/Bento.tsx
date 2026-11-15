@@ -3,6 +3,7 @@ import { ArrowRight, Check, Heart, Home, Stethoscope, UserRound, Users } from "l
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Accent, Eyebrow, LevelChip, type Level } from "./bits";
+import { Doodles } from "./decor";
 import { IMAGES } from "./images";
 import { EASE_UI, Reveal, RevealItem } from "./motion";
 
@@ -179,7 +180,8 @@ const NOTES = [
 
 export function Bento() {
   return (
-    <section id="demo" aria-labelledby="bento-title" className="section-pad relative">
+    <section id="demo" aria-labelledby="bento-title" className="section-pad relative isolate">
+      <Doodles layout="bento" />
       <div className="container-page">
         <Reveal className="max-w-[40rem]">
           <RevealItem>

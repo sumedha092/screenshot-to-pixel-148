@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Accent, GlowBlobs } from "./bits";
-import { APP_URL } from "./images";
+import { FadedPhoto, Hills } from "./decor";
+import { APP_URL, IMAGES } from "./images";
 import { Reveal, RevealItem } from "./motion";
 
 export function ClosingCta() {
   return (
     <section aria-labelledby="cta-title" className="section-dark section-pad relative isolate overflow-hidden">
+      <FadedPhoto src={IMAGES.parkPack} tone="bark" />
       <GlowBlobs />
+      <Hills front="surface" />
       <Reveal className="container-page relative text-center">
         <RevealItem>
           <h2 id="cta-title" className="mx-auto max-w-[48rem] text-display text-on-dark">

@@ -37,6 +37,7 @@ function Index() {
       <div className="relative min-h-screen bg-background text-foreground">
         {/* faint 12-column grid lines behind light sections */}
         <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+          <div className="paw-trail absolute inset-0" />
           <div className="container-page grid-lines h-full" />
         </div>
         <a

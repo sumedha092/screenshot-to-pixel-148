@@ -2,6 +2,8 @@ import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { Activity, Users, Video } from "lucide-react";
 import { useRef } from "react";
 import { Accent, Eyebrow } from "./bits";
+import { Doodles, FadedPhoto } from "./decor";
+import { IMAGES } from "./images";
 import { Reveal, RevealItem } from "./motion";
 
 const STEPS = [
@@ -29,7 +31,9 @@ export function HowItWorks() {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="how-it-works" aria-labelledby="how-title" className="section-pad relative">
+    <section id="how-it-works" aria-labelledby="how-title" className="section-pad relative isolate">
+      <FadedPhoto src={IMAGES.parkRun} tone="canvas" />
+      <Doodles layout="how" />
       <div className="container-page">
         <Reveal className="max-w-[40rem]">
           <RevealItem>

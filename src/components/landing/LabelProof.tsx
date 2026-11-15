@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowRight, Check } from "lucide-react";
 import { Accent, Eyebrow } from "./bits";
+import { Doodles } from "./decor";
 import { IMAGES } from "./images";
 import { EASE_UI, Reveal, RevealItem } from "./motion";
 
@@ -34,7 +35,8 @@ function LabeledCard({ label }: { label: string }) {
 export function LabelProof() {
   const reduce = useReducedMotion();
   return (
-    <section id="label-proof" aria-labelledby="label-title" className="section-pad relative">
+    <section id="label-proof" aria-labelledby="label-title" className="section-pad relative isolate">
+      <Doodles layout="label" />
       <div className="container-page">
         <Reveal className="mx-auto max-w-[44rem] text-center">
           <RevealItem>

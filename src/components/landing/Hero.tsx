@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accent, Eyebrow, LevelChip } from "./bits";
+import { BouncingBall, Hills } from "./decor";
 import { IMAGES } from "./images";
 import { EASE_UI } from "./motion";
 
@@ -24,6 +25,7 @@ export function Hero() {
         <div className="glow-grass absolute right-[-160px] top-[30%] size-[600px] opacity-35" />
         <div className="glow-tennis absolute bottom-[-25%] left-[30%] size-[480px] opacity-20" />
       </motion.div>
+      <Hills front="canvas" />
 
       <div className="container-page relative grid items-center gap-14 pb-24 pt-16 md:grid-cols-12 md:gap-8 md:pb-[120px] md:pt-24">
         <motion.div
@@ -50,11 +52,12 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8"
+          className="relative md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: EASE_UI }}
         >
+          <BouncingBall className="-right-4 -top-14 md:-right-12 md:-top-16" />
           <LiveCard />
         </motion.div>
       </div>
@@ -75,7 +78,7 @@ function LiveCard() {
     <motion.div
       animate={reduce ? {} : { y: [0, -8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="card-surface relative bg-surface p-3 text-ink"
+      className="card-surface relative z-10 bg-surface p-3 text-ink"
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-line">
         <motion.div className="absolute inset-[-6%]" {...drift}>
