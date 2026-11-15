@@ -95,7 +95,7 @@ const PAIRS: [number, number, number][] = [
   [2, 0, 89],
 ];
 const ROW_Y = [18, 50, 82] as const;
-const rowY = (i: number) => rowY(i) ?? 50;
+const rowY = (i: number): number => ROW_Y[i as 0 | 1 | 2] ?? 50;
 
 function MatchViz() {
   const reduce = useReducedMotion();
