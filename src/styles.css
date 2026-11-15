@@ -9,8 +9,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Bonafide design system — Midnight & Meadow palette, 5 type sizes, one radius for cards.
- * Palette: night, navy, ink, muted-ink, canvas, surface, line, indigo, sky, mint + 4 handling levels.
+ * Bonafide design system — "Dog Park" palette, 5 type sizes, one radius for cards.
+ * Palette: bark, forest, grass, tennis, sky, ink, muted-ink, canvas, surface, line + 4 handling levels.
  */
 
 @theme inline {
@@ -41,20 +41,20 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
 
-  /* Brand palette — Midnight & Meadow */
-  --color-night: var(--night);
-  --color-navy: var(--navy);
+  /* Brand palette — Dog Park */
+  --color-bark: var(--bark);
   --color-ink: var(--ink);
   --color-muted-ink: var(--muted-ink);
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
   --color-line: var(--line);
   --color-on-dark: var(--on-dark);
-  --color-indigo: var(--indigo);
-  --color-indigo-dark: var(--indigo-dark);
-  --color-indigo-tint: var(--indigo-tint);
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-forest-tint: var(--forest-tint);
+  --color-grass: var(--grass);
+  --color-tennis: var(--tennis);
   --color-sky: var(--sky);
-  --color-mint: var(--mint);
 
   /* Handling levels (text/dot color) */
   --color-level-green: var(--level-green-fg);
@@ -83,43 +83,43 @@
 
   --shadow-card: var(--shadow-soft);
   --shadow-lift: var(--shadow-soft-lift);
-  --shadow-glow: var(--shadow-indigo-glow);
+  --shadow-glow: var(--shadow-forest-glow);
   --ease-ui: cubic-bezier(0.2, 0, 0, 1);
 }
 
 :root {
   --radius: 0.75rem;
 
-  /* Midnight & Meadow */
-  --night: #0a1628; /* navy 950 — dark sections */
-  --navy: #0f2342; /* navy 900 — headings, nav text */
-  --ink: #0f172a; /* body text */
-  --muted-ink: #5b6b82;
-  --canvas: #f7f9fc; /* page background */
+  /* Dog Park */
+  --bark: #18241d; /* dark sections, hero, closing CTA */
+  --ink: #18241d; /* body text + headings */
+  --muted-ink: #5c6b5f;
+  --canvas: #f2f6ec; /* page background */
   --surface: #ffffff; /* cards */
-  --line: #e3e8f0;
+  --line: #dce5d3;
   --on-dark: #ffffff;
-  --indigo: #5b5bf6;
-  --indigo-dark: #4646e0;
-  --indigo-tint: color-mix(in oklab, var(--indigo) 10%, var(--surface));
-  --sky: #38bdf8;
-  --mint: #34d399;
-  --gradient-signature: linear-gradient(120deg, var(--indigo), var(--sky), var(--mint));
-  --gradient-logo: linear-gradient(135deg, var(--indigo), var(--sky));
+  --forest: #2e5e45; /* primary buttons, links */
+  --forest-dark: #234a36;
+  --forest-tint: color-mix(in oklab, var(--forest) 10%, var(--surface));
+  --grass: #4c9a6a; /* secondary accent, chart lines */
+  --tennis: #d4e25a; /* highlight accent — dark backgrounds only for text */
+  --sky: #a9d3ec; /* soft secondary for charts and tags */
+  --gradient-signature: linear-gradient(120deg, var(--forest), var(--grass), var(--tennis));
+  --gradient-logo: linear-gradient(135deg, var(--forest), var(--grass));
 
   /* Handling levels — the only warm tones allowed */
-  --level-green-bg: #d1fae5;
-  --level-green-fg: #065f46;
-  --level-yellow-bg: #fef3c7;
-  --level-yellow-fg: #92400e;
-  --level-orange-bg: #ffedd5;
-  --level-orange-fg: #9a3412;
-  --level-red-bg: #fee2e2;
-  --level-red-fg: #991b1b;
+  --level-green-bg: #ddf3e4;
+  --level-green-fg: #1f5a36;
+  --level-yellow-bg: #fbf3c8;
+  --level-yellow-fg: #7a5b0b;
+  --level-orange-bg: #fce6d4;
+  --level-orange-fg: #8a3b12;
+  --level-red-bg: #f9dedc;
+  --level-red-fg: #8e2a23;
 
-  --shadow-soft: 0 12px 32px -16px color-mix(in oklab, var(--navy) 22%, transparent);
-  --shadow-soft-lift: 0 20px 40px -18px color-mix(in oklab, var(--navy) 32%, transparent);
-  --shadow-indigo-glow: 0 10px 30px -8px color-mix(in oklab, var(--indigo) 65%, transparent);
+  --shadow-soft: 0 12px 32px -16px color-mix(in oklab, var(--bark) 22%, transparent);
+  --shadow-soft-lift: 0 20px 40px -18px color-mix(in oklab, var(--bark) 32%, transparent);
+  --shadow-forest-glow: 0 10px 30px -8px color-mix(in oklab, var(--forest) 60%, transparent);
 
   --background: var(--canvas);
   --foreground: var(--ink);
@@ -127,19 +127,19 @@
   --card-foreground: var(--ink);
   --popover: var(--surface);
   --popover-foreground: var(--ink);
-  --primary: var(--indigo);
+  --primary: var(--forest);
   --primary-foreground: var(--on-dark);
   --secondary: var(--canvas);
-  --secondary-foreground: var(--navy);
+  --secondary-foreground: var(--ink);
   --muted: var(--canvas);
   --muted-foreground: var(--muted-ink);
-  --accent: var(--indigo-tint);
-  --accent-foreground: var(--navy);
+  --accent: var(--forest-tint);
+  --accent-foreground: var(--ink);
   --destructive: var(--level-red-fg);
   --destructive-foreground: var(--on-dark);
   --border: var(--line);
   --input: var(--line);
-  --ring: var(--sky);
+  --ring: var(--forest);
 }
 
 @layer base {
@@ -169,17 +169,17 @@
     font-family: var(--font-display);
     font-weight: 600;
     font-variation-settings: "opsz" 96;
-    color: var(--navy);
+    color: var(--ink);
   }
-  /* Sky ring with a thin navy halo so it stays visible on white too */
+  /* 3px forest ring with a white halo so it stays visible on dark sections too */
   :focus-visible {
-    outline: 3px solid var(--sky);
+    outline: 3px solid var(--forest);
     outline-offset: 3px;
-    box-shadow: 0 0 0 3px var(--navy);
+    box-shadow: 0 0 0 3px var(--surface);
   }
   ::selection {
-    background: color-mix(in oklab, var(--indigo) 22%, var(--surface));
-    color: var(--navy);
+    background: color-mix(in oklab, var(--tennis) 45%, var(--surface));
+    color: var(--ink);
   }
 }
 
@@ -209,7 +209,7 @@
 }
 
 @utility section-dark {
-  background: var(--night);
+  background: var(--bark);
   color: var(--on-dark);
 }
 
@@ -247,16 +247,16 @@
   border-right: 1px solid color-mix(in oklab, var(--line) 70%, transparent);
 }
 
-@utility glow-indigo {
-  background: radial-gradient(circle, color-mix(in oklab, var(--indigo) 70%, transparent), transparent 65%);
+@utility glow-forest {
+  background: radial-gradient(circle, color-mix(in oklab, var(--forest) 85%, transparent), transparent 65%);
   filter: blur(48px);
 }
-@utility glow-sky {
-  background: radial-gradient(circle, color-mix(in oklab, var(--sky) 60%, transparent), transparent 65%);
+@utility glow-grass {
+  background: radial-gradient(circle, color-mix(in oklab, var(--grass) 65%, transparent), transparent 65%);
   filter: blur(48px);
 }
-@utility glow-mint {
-  background: radial-gradient(circle, color-mix(in oklab, var(--mint) 55%, transparent), transparent 65%);
+@utility glow-tennis {
+  background: radial-gradient(circle, color-mix(in oklab, var(--tennis) 50%, transparent), transparent 65%);
   filter: blur(48px);
 }
 
@@ -284,7 +284,8 @@
 @utility paper {
   background-color: var(--surface);
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .06  0 0 0 0 .14  0 0 0 0 .26  0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96'><g fill='%2318241d' fill-opacity='.05'><ellipse cx='20' cy='26' rx='5' ry='4.2'/><ellipse cx='14' cy='19.5' rx='2' ry='2.6'/><ellipse cx='18' cy='15.5' rx='2' ry='2.6'/><ellipse cx='22.5' cy='15.5' rx='2' ry='2.6'/><ellipse cx='26.5' cy='19.5' rx='2' ry='2.6'/></g><g transform='translate(52 48) rotate(-20 20 20)' fill='%2318241d' fill-opacity='.05'><ellipse cx='20' cy='26' rx='5' ry='4.2'/><ellipse cx='14' cy='19.5' rx='2' ry='2.6'/><ellipse cx='18' cy='15.5' rx='2' ry='2.6'/><ellipse cx='22.5' cy='15.5' rx='2' ry='2.6'/><ellipse cx='26.5' cy='19.5' rx='2' ry='2.6'/></g></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .09  0 0 0 0 .14  0 0 0 0 .11  0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
     radial-gradient(120% 80% at 0% 0%, var(--canvas), transparent 60%);
 }
 
@@ -328,7 +329,7 @@
 }
 
 @keyframes live-pulse {
-  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--mint) 60%, transparent); }
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--tennis) 60%, transparent); }
   70% { box-shadow: 0 0 0 8px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
@@ -364,6 +365,21 @@
 }
 @utility shaky {
   animation: shake 0.9s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Faint diagonal trail of paw prints; the tile drifts one full tile every 40s */
+@keyframes paw-drift {
+  from { background-position: 0 0; }
+  to { background-position: 280px -280px; }
+}
+@utility paw-trail {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><g fill='%2318241d'><g transform='translate(14 206) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(52 186) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(78 150) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(116 130) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(142 94) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(180 74) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(206 38) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g><g transform='translate(244 18) rotate(45 10 10)'><ellipse cx='10' cy='13' rx='4.4' ry='3.7'/><ellipse cx='4.6' cy='7.6' rx='1.8' ry='2.3'/><ellipse cx='8.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='12.2' cy='4.2' rx='1.8' ry='2.3'/><ellipse cx='15.6' cy='7.6' rx='1.8' ry='2.3'/></g></g></svg>");
+  background-size: 280px 280px;
+  opacity: 0.07;
+  animation: paw-drift 40s linear infinite;
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }
