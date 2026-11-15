@@ -33,7 +33,7 @@ export function Hero() {
         >
           <Eyebrow tone="peach">Behavior, measured — never breed</Eyebrow>
           <h1 className="mt-5 text-display text-cream">
-            Judge the dog, <Accent tone="peach">not the label.</Accent>
+            Judge the dog, <span className="block"><Accent tone="peach">not the label.</Accent></span>
           </h1>
           <p className="mt-6 max-w-[30rem] text-lead text-sand">
             We measure real behavior from kennel video and match every dog to the family where they'll thrive.
@@ -74,7 +74,7 @@ function LiveCard() {
     <motion.div
       animate={reduce ? {} : { y: [0, -8, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="card-surface relative p-3 text-ink"
+      className="card-surface relative bg-cream p-3 text-ink"
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand">
         <motion.div className="absolute inset-[-6%]" {...drift}>
@@ -96,13 +96,13 @@ function LiveCard() {
             {["left-0 top-0 border-l-4 border-t-4 rounded-tl-[14px]", "right-0 top-0 border-r-4 border-t-4 rounded-tr-[14px]", "left-0 bottom-0 border-l-4 border-b-4 rounded-bl-[14px]", "right-0 bottom-0 border-r-4 border-b-4 rounded-br-[14px]"].map((c) => (
               <span key={c} className={`absolute size-5 border-cream ${c}`} />
             ))}
-            <span className="absolute -top-9 left-0 rounded-full bg-ink/85 px-3 py-1 text-body font-bold text-cream tabular-nums">
+            <span className="absolute left-2 top-2 rounded-full bg-ink/85 px-2.5 py-0.5 text-body font-bold text-cream tabular-nums">
               dog · 0.97
             </span>
           </motion.div>
         </motion.div>
 
-        <div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-ink/80 px-3 py-1 text-body font-extrabold text-cream">
+        <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-ink/80 px-3 py-1 text-body font-extrabold text-cream">
           <span className="live-dot size-2.5 rounded-full bg-level-red" aria-hidden="true" />
           LIVE
         </div>

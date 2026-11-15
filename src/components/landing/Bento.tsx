@@ -94,42 +94,64 @@ const PAIRS: [number, number, number][] = [
   [1, 2, 91],
   [2, 0, 89],
 ];
-const ROW_Y = [18, 50, 82] as const;
+const ROW_Y = [14, 47, 80] as const;
 const rowY = (i: number): number => ROW_Y[i as 0 | 1 | 2] ?? 50;
 
 function MatchViz() {
   const reduce = useReducedMotion();
+  // viewBox matches the 16:11 box, so circles and curves stay true
+  const W = 160;
+  const H = 110;
+  const y = (i: number) => (rowY(i) / 100) * H;
   return (
-    <div className="relative mx-auto aspect-[16/11] w-full max-w-[560px]" role="img" aria-label="Three dogs matched to three families at once: Pepper to the family with kids at 94%, Juno to the active couple at 91%, Biscuit to the first-time renter at 89%.">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 size-full" aria-hidden="true">
+    <div
+      className="relative mx-auto aspect-[16/11] w-full max-w-[560px]"
+      role="img"
+      aria-label="Three dogs matched to three families at once: Pepper to the family with kids at 94%, Juno to the active couple at 91%, Biscuit to the first-time renter at 89%."
+    >
+      <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 size-full" aria-hidden="true">
         {PAIRS.map(([d, f], i) => (
           <motion.path
             key={i}
-            d={`M18,${rowY(d)} C50,${rowY(d)} 50,${rowY(f)} 82,${rowY(f)}`}
+            d={`M20,${y(d)} C80,${y(d)} 80,${y(f)} 140,${y(f)}`}
             fill="none"
             className="stroke-clay"
-            strokeWidth="2"
-            vectorEffect="non-scaling-stroke"
-            strokeDasharray="1 0"
-            initial={{ pathLength: reduce ? 1 : 0, opacity: 0.4 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
+            strokeWidth="0.9"
+            strokeLinecap="round"
+            initial={{ pathLength: reduce ? 1 : 0 }}
+            whileInView={{ pathLength: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 1.1, delay: 0.3 + i * 0.3, ease: EASE_UI }}
           />
         ))}
       </svg>
       {DOGS.map((dog, i) => (
-        <div key={dog.name} className="absolute left-0 flex -translate-y-1/2 items-center gap-2" style={{ top: `${rowY(i)}%` }}>
-          <img src={dog.img} alt={dog.alt} className="photo-warm size-12 rounded-full border-2 border-cream object-cover shadow-card md:size-14" loading="lazy" />
-          <span className="hidden text-body font-bold sm:inline">{dog.name}</span>
+        <div
+          key={dog.name}
+          className="absolute left-[6.25%] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+          style={{ top: `${rowY(i)}%` }}
+        >
+          <img
+            src={dog.img}
+            alt={dog.alt}
+            className="photo-warm size-11 rounded-full border-2 border-cream object-cover shadow-card md:size-14"
+            loading="lazy"
+          />
+          <span className="absolute top-full mt-1 whitespace-nowrap text-body font-bold">{dog.name}</span>
         </div>
       ))}
       {FAMILIES.map((fam, i) => (
-        <div key={fam.name} className="absolute right-0 flex -translate-y-1/2 flex-row-reverse items-center gap-2" style={{ top: `${rowY(i)}%` }}>
-          <span className="grid size-12 place-items-center rounded-full border border-line bg-sand text-clay-dark shadow-card md:size-14">
+        <div
+          key={fam.name}
+          className="absolute left-[93.75%] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+          style={{ top: `${rowY(i)}%` }}
+        >
+          <span className="grid size-11 place-items-center rounded-full border border-line bg-sand text-clay-dark shadow-card md:size-14">
             <fam.icon className="size-5" aria-hidden="true" />
           </span>
-          <span className="hidden text-right text-body font-bold sm:inline">{fam.name}</span>
+          <span className="absolute right-0 top-full mt-1 whitespace-nowrap text-body font-bold sm:right-auto">
+            {fam.name}
+          </span>
         </div>
       ))}
       {PAIRS.map(([d, f, pct], i) => (
@@ -169,7 +191,7 @@ export function Bento() {
           </RevealItem>
         </Reveal>
 
-        <Reveal className="mt-14 grid gap-5 md:auto-rows-fr md:grid-cols-6">
+        <Reveal className="mt-14 grid gap-5 md:grid-cols-6">
           <Tile
             className="md:col-span-4 md:row-span-2"
             kicker="Matching"

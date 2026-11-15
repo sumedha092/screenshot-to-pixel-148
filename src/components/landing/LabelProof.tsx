@@ -22,7 +22,7 @@ function LabeledCard({ label }: { label: string }) {
           className="photo-warm aspect-[4/5] w-full object-cover"
           loading="lazy"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-body font-bold text-ink">
+        <span className="absolute left-2 top-2 rounded-full bg-cream/90 px-2.5 py-0.5 md:left-3 md:top-3 md:px-3 md:py-1 text-body font-bold text-ink">
           Labeled: {label}
         </span>
       </div>
@@ -47,12 +47,12 @@ export function LabelProof() {
           </RevealItem>
         </Reveal>
 
-        <Reveal className="mt-14 grid items-center gap-5 md:grid-cols-12">
-          <RevealItem className="md:col-span-3">
+        <Reveal className="mt-14 grid grid-cols-2 items-center gap-4 md:grid-cols-12 md:gap-5">
+          <RevealItem className="order-1 md:order-none md:col-span-3">
             <LabeledCard label="pit bull" />
           </RevealItem>
 
-          <RevealItem className="relative md:col-span-6">
+          <RevealItem className="relative order-3 col-span-2 md:order-none md:col-span-6">
             <div className="flex justify-center py-1 md:hidden" aria-hidden="true">
               <ArrowDown className="size-6 text-clay" />
             </div>
@@ -96,12 +96,9 @@ export function LabelProof() {
                 </tbody>
               </table>
             </div>
-            <div className="flex justify-center py-1 md:hidden" aria-hidden="true">
-              <ArrowDown className="size-6 rotate-180 text-clay" />
-            </div>
           </RevealItem>
 
-          <RevealItem className="md:col-span-3">
+          <RevealItem className="order-2 md:order-none md:col-span-3">
             <LabeledCard label="Labrador mix" />
           </RevealItem>
         </Reveal>

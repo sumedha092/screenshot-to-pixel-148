@@ -73,11 +73,11 @@ export function Passport() {
                   <Seal />
                 </header>
 
-                <div className="relative mt-6 grid gap-6 sm:grid-cols-[150px_1fr]">
+                <div className="relative mt-6 grid grid-cols-[96px_1fr] gap-x-5 gap-y-5 sm:grid-cols-[150px_1fr] sm:gap-x-6">
                   <img
                     src={IMAGES.passport}
                     alt="Maple, a chocolate-brown shelter dog, looking up at the camera"
-                    className="photo-warm aspect-[4/5] w-full rounded-[20px] border-4 border-cream object-cover shadow-card sm:w-[150px]"
+                    className="photo-warm aspect-[4/5] w-full rounded-[20px] border-4 border-cream object-cover shadow-card sm:row-span-2"
                     loading="lazy"
                   />
                   <div>
@@ -86,7 +86,8 @@ export function Passport() {
                     <div className="mt-3">
                       <LevelChip level="green">Green handling level</LevelChip>
                     </div>
-                    <dl className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 text-body sm:grid-cols-2">
+                  </div>
+                  <dl className="col-span-2 grid grid-cols-1 sm:col-span-1 sm:col-start-2 gap-x-6 gap-y-2 text-body sm:grid-cols-2">
                       {SCORES.map(([k, v, note]) => (
                         <div key={k} className="flex items-baseline justify-between border-b border-dashed border-line pb-1">
                           <dt className="font-semibold">{k}</dt>
@@ -100,7 +101,6 @@ export function Passport() {
                         <dd className="font-bold text-clay-dark">not used</dd>
                       </div>
                     </dl>
-                  </div>
                 </div>
 
                 <div className="relative mt-6">

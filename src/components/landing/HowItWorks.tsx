@@ -42,7 +42,7 @@ export function HowItWorks() {
 
         <div ref={ref} className="relative mt-16">
           {/* connecting line (desktop: horizontal, mobile: vertical) */}
-          <div aria-hidden="true" className="absolute left-[10%] right-[10%] top-9 hidden h-0.5 bg-line md:block">
+          <div aria-hidden="true" className="absolute left-[16.66%] right-[16.66%] top-9 hidden h-0.5 bg-line md:block">
             <motion.div
               className="h-full origin-left bg-clay"
               style={{ scaleX: reduce ? 1 : progress }}
