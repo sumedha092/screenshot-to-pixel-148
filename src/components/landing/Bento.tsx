@@ -181,6 +181,7 @@ const NOTES = [
 export function Bento() {
   return (
     <section id="demo" aria-labelledby="bento-title" className="section-pad relative isolate">
+      <div aria-hidden="true" className="paw-trail pointer-events-none absolute inset-0 -z-10" />
       <Doodles layout="bento" />
       <div className="container-page">
         <Reveal className="max-w-[40rem]">

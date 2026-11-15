@@ -33,6 +33,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" aria-labelledby="how-title" className="section-pad relative isolate">
       <FadedPhoto src={IMAGES.parkRun} tone="canvas" />
+      <div aria-hidden="true" className="paw-trail pointer-events-none absolute inset-0 -z-10" />
       <Doodles layout="how" />
       <div className="container-page">
         <Reveal className="max-w-[40rem]">
